@@ -9,6 +9,7 @@ use REBELinBLUE\Deployer\Contracts\Repositories\ConfigFileRepositoryInterface;
 use REBELinBLUE\Deployer\Contracts\Repositories\DeploymentRepositoryInterface;
 use REBELinBLUE\Deployer\Contracts\Repositories\GroupRepositoryInterface;
 use REBELinBLUE\Deployer\Contracts\Repositories\HeartbeatRepositoryInterface;
+use REBELinBLUE\Deployer\Contracts\Repositories\KeyRepositoryInterface;
 use REBELinBLUE\Deployer\Contracts\Repositories\NotificationRepositoryInterface;
 use REBELinBLUE\Deployer\Contracts\Repositories\NotifyEmailRepositoryInterface;
 use REBELinBLUE\Deployer\Contracts\Repositories\ProjectRepositoryInterface;
@@ -23,6 +24,7 @@ use REBELinBLUE\Deployer\Repositories\EloquentConfigFileRepository;
 use REBELinBLUE\Deployer\Repositories\EloquentDeploymentRepository;
 use REBELinBLUE\Deployer\Repositories\EloquentGroupRepository;
 use REBELinBLUE\Deployer\Repositories\EloquentHeartbeatRepository;
+use REBELinBLUE\Deployer\Repositories\EloquentKeyRepository;
 use REBELinBLUE\Deployer\Repositories\EloquentNotificationRepository;
 use REBELinBLUE\Deployer\Repositories\EloquentNotifyEmailRepository;
 use REBELinBLUE\Deployer\Repositories\EloquentProjectRepository;
@@ -45,6 +47,7 @@ class RepositoryServiceProvider extends ServiceProvider
         DeploymentRepositoryInterface::class   => EloquentDeploymentRepository::class,
         GroupRepositoryInterface::class        => EloquentGroupRepository::class,
         HeartbeatRepositoryInterface::class    => EloquentHeartbeatRepository::class,
+        KeyRepositoryInterface::class          => EloquentKeyRepository::class,
         NotificationRepositoryInterface::class => EloquentNotificationRepository::class,
         NotifyEmailRepositoryInterface::class  => EloquentNotifyEmailRepository::class,
         ProjectRepositoryInterface::class      => EloquentProjectRepository::class,
