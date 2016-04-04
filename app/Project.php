@@ -418,6 +418,16 @@ class Project extends Model implements PresentableInterface
     }
 
     /**
+     * Belongs to relationship.
+     *
+     * @return Key
+     */
+    public function key()
+    {
+        return $this->belongsTo(Key::class);
+    }
+
+    /**
      * Generate a friendly path for the mirror of the repository.
      * Use the repository rather than the project ID, so if a single
      * repo is used in multiple projects it is not duplicated.
