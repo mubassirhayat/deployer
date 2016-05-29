@@ -72,7 +72,7 @@ class Template extends Model implements PresentableInterface
     protected $casts = [
         'id' => 'integer',
     ];
-    
+
     /**
      * Define a accessor for the count of projects.
      *
