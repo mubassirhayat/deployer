@@ -68,7 +68,7 @@ class Project extends Model implements PresentableInterface
      *
      * @var array
      */
-    protected $hidden = ['private_key', 'created_at', 'deleted_at', 'updated_at', 'hash',
+    protected $hidden = ['created_at', 'deleted_at', 'updated_at', 'hash',
                          'updated_at', 'servers', 'commands', 'hash', 'notifyEmails',
                          'group', 'servers', 'commands', 'heartbeats', 'checkUrls',
                          'notifications', 'deployments', 'shareFiles', 'configFiles', 'last_mirrored', ];
@@ -131,16 +131,8 @@ class Project extends Model implements PresentableInterface
     {
         parent::boot();
 
-        // When  creating the model generate an SSH Key pair and a webhook hash
+        // When creating the model generate a webhook hash
         static::saving(function (Project $model) {
-            if (!array_key_exists('private_key', $model->attributes) || $model->private_key === '') {
-                //$model->generateSSHKey();
-            }
-
-            if (!array_key_exists('public_key', $model->attributes) || $model->public_key === '') {
-                //$model->regeneratePublicKey();
-            }
-
             if (!array_key_exists('hash', $model->attributes)) {
                 $model->generateHash();
             }
