@@ -20,7 +20,7 @@ class MoveProjectKeys extends Migration
         });
 
         $projects = Project::withTrashed()
-                           ->notTemplates()
+                           ->all()
                            ->get();
 
         foreach ($projects as $project) {
