@@ -23,6 +23,11 @@ class KeyController extends Controller
         $this->repository = $repository;
     }
 
+    /**
+     * Key listing.
+     *
+     * @return \Illuminate\View\View
+     */
     public function index()
     {
         $keys = $this->repository->getAll();
