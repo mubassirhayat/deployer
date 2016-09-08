@@ -19,8 +19,8 @@ class MoveProjectKeys extends Migration
             $table->foreign('key_id')->references('id')->on('keys');
         });
 
-        $projects = Project::withTrashed()
-                           ->all()
+        $projects = Project::all()
+                           ->withTrashed()
                            ->get();
 
         foreach ($projects as $project) {
